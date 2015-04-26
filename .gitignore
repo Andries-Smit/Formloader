@@ -1,0 +1,13 @@
+test/mx56/javasource/
+test/mx515/javasource/
+test/mx56/deployment/
+test/mx515/deployment/
+test/mx56/.classpath
+test/mx515/.classpath
+test/mx56/.project
+test/mx515/.project
+*.launch
+*.tmp
+*.lock
+.idea/
+*.bak

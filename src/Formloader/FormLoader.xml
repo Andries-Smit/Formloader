@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<widget id="FormLoader.widget.FormLoader" needsEntityContext="false" xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../../xsd/widget.xsd">
+  <name>Form Loader</name>
+  <description>Form Loader.</description>
+  <icon>
+  iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2Fy
+  ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAbJJREFUeNqkUz9IAmEUfxenNygORdBZ
+  lHikObcauAWBizTUGi5qQ4NT0BIFDREN/VlaIxpyaHJsaNAtbnA4DYLoEPTwKgLx
+  vj/d9ymn+Q+hB999773vvd/93u+7Eyil0Gs+n28bIbQIE1gsFkNif1JRFDmXy51M
+  ApDJZLJT/UlZlpHL5YJ8Ps/XOJ/ZAAOv10vdbjeYpsnjcT4HKFV0+qQ14eOLApPD
+  v5oASZKgXq/zgnE+B3hUm+DxemBuus3A/PbxQ8MwnMJRPjNh/67y5xpIrQRH6Y1J
+  NIR4PJ4VKaZwkJh3kuXyDxSLxZFNhUIBXioG4M+3Bz4CQi1oWZZTsBQIgGDvqqoO
+  BUgmk5A+fYbbq+NNDkAJBYIJpC7fnaLr3QW+R6PRAQCz0QBCsBOLLGDrIuVvi8J0
+  QARWIhGodwTrN0JIFwDZ9DHGA0Wapg1tDodDgCzUBaA2fYa4d1NzkufJ2ZEjVKtV
+  oL0MWDOxdTjbmeH0aYdiMKiArut8KME+YB+ZINgPKgDp+QGn4J8mri1LcHj/at8E
+  5rfB9GAMcMviO3sbsWcmlHDqjP3WesgB+BVgAM/E4WZoTQeSAAAAAElFTkSuQmCC
+  </icon>
+
+  <properties>
+		<property key="formPath" type="form" required="false">
+			<caption>Form</caption>
+			<category>Data source</category>
+			<description>The form to be loaded. If empty, and #sharednodeid is not empty, #sharednodeid will be emptied.</description>
+		</property>
+		<property key="wWidth" type="integer" defaultValue="0">
+			<caption>Form width</caption>
+			<category>Appearance</category>
+			<description>The form to be loaded.</description>
+		</property>
+		<property key="fixedHeight" type="integer" defaultValue="0">
+			<caption>Fixed height</caption>
+			<category>Appearance</category>
+			<description>The height of the area in which the form is loaded. Use zero for auto. Using a fixed height might improve the rendering speed and reduce screen flickering.</description>
+		</property>        
+		<property key="maxHeight" type="integer" defaultValue="0">
+			<caption>Max height</caption>
+			<category>Appearance</category>
+			<description>The maximum height of the form in px, 0 means no maximum. Only useful if fixedHeight = 0. Not supported in Internet Explorer</description>
+		</property>
+        <property key="animate" type= "boolean" defaultValue="false">
+            <caption>Animate</caption>
+            <category>Appearance</category>
+            <description>Use a fade-in effect when loading the content</description>
+        </property>
+		<property key="sharednodeid" type="string" defaultValue="" required="false">
+			<caption>Shared node ID</caption>
+			<category>Data source</category>
+			<description>If the id of a HTML element is entered here, the formloader will load the form in the designated html elementID with the selected form. Otherwise the form will be loaded inside the widget. This is useful to load a dataview inside a predefined element defined by your theme. </description>
+		</property>
+        <property key="requirescontext" type= "boolean" defaultValue="true">
+            <caption>Requires context</caption>
+            <category>Data source</category>
+            <description></description>
+        </property>
+		<property key="listenchannel" type="string" defaultValue="" required="false">
+			<caption>Listen target</caption>
+			<category>Behavior</category>
+			<description>You can specify the listen channel you've set in a different widget here.
+			The form will then receive its context object from the widget matching the channel.</description>
+		</property>
+		<property key="jumptotop" type="boolean" defaultValue="false">
+			<caption>Jump to top</caption>
+			<category>Behavior</category>
+			<description>If this is set, the browser will jump to the top of the page when a new object is loaded.</description>
+		</property>
+		<property key="cacheforms" type="boolean" defaultValue="false">
+			<caption>Cache forms</caption>
+			<category>Behavior</category>
+			<description>This will improve the performance of reloading the same form multiple times, but might lead to memory issues with large, complex forms.</description>
+		</property>
+	</properties>
+</widget>
