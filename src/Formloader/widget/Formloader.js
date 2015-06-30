@@ -22,11 +22,12 @@
  grids using this widget. Furthermore this widget can be used to show 
  dataviews outside the content window. 
  */
-require(["dojo/_base/declare", "mxui/widget/_WidgetBase", 'dojo/_base/lang', 'dojo/dom-construct', "dojo/dom-geometry",
-    "dojo/dom-style", 'dojo/dom-class', "dojo/dom-attr", "dojo/dom", "dojo/_base/fx", "dojo/_base/connect", "dojo/query", "dijit/registry"],
+
+require(["dojo/_base/declare", "mxui/widget/_WidgetBase", "dojo/_base/lang", "dojo/dom-construct", "dojo/dom-geometry",
+    "dojo/dom-style", "dojo/dom-class", "dojo/dom-attr", "dojo/dom", "dojo/_base/fx", "dojo/_base/connect", "dojo/query", "dijit/registry"],
         function (declare, _WidgetBase, lang, domConstruct, domGeo, domStyle, domClass, domAttr, dom, fx, connect, query, registry) {
-            'use strict';
-            declare("FormLoader.widget.FormLoader", [_WidgetBase], {
+            "use strict";
+            return declare("FormLoader.widget.FormLoader", [_WidgetBase], {
                 // input args           
                 formPath: "",
                 wWidth: 0,
@@ -82,16 +83,16 @@ require(["dojo/_base/declare", "mxui/widget/_WidgetBase", 'dojo/_base/lang', 'do
                                 }
                             }).play();
                         } else {
-                            domStyle.set(this.domNode, "display", "")
+                            domStyle.set(this.domNode, "display", "");
                         }
                         this.hasContext = true;
                         if (this.formObj && obj != undefined) {
                             this.loadContext(obj);
                         } else if (this.formObj) {
-                            /*
-                             Ignore this as the loading might take really long and we want to show the new object!
-                             Leads to unexpected behavior when combined with the Navigation Loader which marks the active object
-                             */
+                            
+                             //Ignore this as the loading might take really long and we want to show the new object!
+                             //Leads to unexpected behavior when combined with the Navigation Loader which marks the active object
+                             
                             //this.isFormLoading = true; 
                             this.loadContext();
                         } else
@@ -192,7 +193,8 @@ require(["dojo/_base/declare", "mxui/widget/_WidgetBase", 'dojo/_base/lang', 'do
                             }
                         }
                         //not the active state, but, form is in cache
-                        else if (/*this.sharednodeid != "" && */ this.cachedForms[this.formPath] && this.cacheforms) {
+                        //else if (*this.sharednodeid != "" &&  this.cachedForms[this.formPath] && this.cacheforms) {
+                        else if ( this.cachedForms[this.formPath] && this.cacheforms) {
                             this.formObj = this.cachedForms[this.formPath];
                             this.loaderStates[this.sharednodeid] = {
                                 formPath: this.formPath,
